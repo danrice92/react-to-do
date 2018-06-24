@@ -11,8 +11,14 @@ class ToDo extends Component {
     // `class` is an existing JS keyword, so JSX uses `className` instead
     // Must be only one root element that contains all other elements
     return (
-      <li> A todo will go here </li>
+      <li>
+        <input type="checkbox" checked={ this.props.isCompleted } />
+        <span>{ this.props.description }</span>
+      </li>
+      // Since todo.description and todo.isCompleted were passed in as props,
+      // they are accessible to the ToDo component here as this.props.description and this.props.isCompleted
     );
+
   }
 }
 
