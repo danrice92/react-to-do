@@ -12,11 +12,16 @@ class ToDo extends Component {
     // Must be only one root element that contains all other elements
     return (
       <li>
-        <input type="checkbox" checked={ this.props.isCompleted } />
+        <input
+          type="checkbox"
+          checked={ this.props.isCompleted }
+          onChange={ this.props.toggleComplete }
+        />
         <span>{ this.props.description }</span>
       </li>
       // Since todo.description and todo.isCompleted were passed in as props,
       // they are accessible to the ToDo component here as this.props.description and this.props.isCompleted
+      // onChange is a React listener
     );
 
   }
