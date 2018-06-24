@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+// removed the `import logo` command
+// The `import` command pulls in a JavaScript entity that's `export`ed in another file.
+// Webpack uses `import` to figure out what to bundle into the app.
+import ToDo from './components/ToDo.js';
+// Since ToDo.js exports itself, App.js can import it
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {/* removed boilerplate code */}
+        <ul>
+          <ToDo />
+          <ToDo />
+        </ul>
       </div>
     );
   }
